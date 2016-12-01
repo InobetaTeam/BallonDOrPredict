@@ -6,10 +6,19 @@ cnx = mysql.connector.connect(user='InobetaTeam', password='jScr59~5',
 cursor = cnx.cursor()
 query = ("SELECT * FROM medelhamdani_BallonDOr.Country;")
 
-
 cursor.execute(query)
 
+def test():
+    idArray = []
+    nameArray = []
+    line = []
+    for (id, name) in cursor:
+        idArray.append(id)
+        nameArray.append(name)
+        line.append((id, name))
+    return line
 
-for (id, name) in cursor:
-    print("{} - {}".format(id, name))
+print test()
+
+cursor.close()
 cnx.close()
