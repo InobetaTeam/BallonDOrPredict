@@ -9,6 +9,7 @@ query = ("SELECT * FROM medelhamdani_BallonDOr.Country;")
 
 cursor.execute(query)
 
+
 for (id, name) in cursor:
     print("{} - {}".format(id, name))
 cnx.close()
